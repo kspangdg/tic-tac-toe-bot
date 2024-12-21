@@ -22,6 +22,7 @@ h1 > span {
     height: 16.625rem;
     aspect-ratio: 1;
     margin-bottom: 1rem;
+    margin-right: 1rem;
 }
 
 .grid > div {
@@ -31,8 +32,19 @@ h1 > span {
     font-size: 1.875rem;
 }
 
+.groups > span {
+    display: block;
+    background-color: #818182;
+    width: 1px;
+    height: 50px;
+    margin-top: 10px;
+}
+.groups > span:first-child {
+    margin-top: 0;
+}
+
 #canvas {
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     /* border: 1px solid black; */
 }
 

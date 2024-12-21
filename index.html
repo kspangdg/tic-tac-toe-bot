@@ -13,17 +13,28 @@
     <div class="flex">
         <div>
             <div class="grid" id="grid">
-                <div>0</div>
-                <div>0</div>
-                <div>0</div>  
-                <div>0</div>
-                <div>0</div>
-                <div>0</div>  
-                <div>0</div>
-                <div>0</div>
-                <div>0</div>
+                <div>_</div>
+                <div>_</div>
+                <div>_</div>  
+                <div>_</div>
+                <div>_</div>
+                <div>_</div>  
+                <div>_</div>
+                <div>_</div>
+                <div>_</div>
             </div>
             <div class="message" id="message">Click a square to start</div>
+        </div>
+        <div class="groups">
+            <span></span>
+            <span></span>
+            <span></span>  
+            <span></span>
+            <span></span>
+            <span></span>  
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
         <div>
             <canvas id="canvas" width="840" height="540"></canvas>
@@ -32,8 +43,13 @@
             <div class="compute" id="compute">0</div>
         </div>
     </div>
-    <div class="flex weights" id="weights"></div>
+    <div class="flex weights" id="weights">
+        <div id="inputs"></div>
+        <div id="hidden"></div>
+        <div id="outputs"></div>
+    </div>
 
+    <script src="assets/js/weights.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
 </html>
