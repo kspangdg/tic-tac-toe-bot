@@ -114,13 +114,15 @@ class NeuralNetwork {
                 for (let i = 0; i < this.layers[property].count; i++) {
                     for (let j = 0; j < this.layers['hidden'].count; j++) {
                         const weight = this.color_opacity(this.layers[property].cells[i].weights[j]);
+                        const value = this.layers[property].cells[i].value;
+                        const o = (weight * value > 0.05) ? weight * value : 0.05;
                         // clear previous line
                         this.ctx.beginPath();
                         this.ctx.moveTo(10, y + (i * 20));
                         this.ctx.lineTo(400, y * 17 + (j * 20));
                         console.log(weight);
                         
-                        this.ctx.strokeStyle = (this.game_started) ? 'rgba(24, 231, 207, ' + weight + ')' : 'rgba(24, 231, 207, 0.1)';
+                        this.ctx.strokeStyle = (this.game_started) ? 'rgba(24, 231, 207, ' + o + ')' : 'rgba(24, 231, 207, 0.1)';
                         this.ctx.stroke();
                     }
                 }
@@ -128,10 +130,12 @@ class NeuralNetwork {
                 for (let i = 0; i < this.layers[property].count; i++) {
                     for (let j = 0; j < this.layers['output'].count; j++) {
                         const weight = this.color_opacity(this.layers[property].cells[i].weights[j]);
+                        const value = this.layers[property].cells[i].value;
+                        const o = (weight * value > 0.05) ? weight * value : 0.05;
                         this.ctx.beginPath();
                         this.ctx.moveTo(400, y + (i * 20));
                         this.ctx.lineTo(800, y + 20 + (j * 20));
-                        this.ctx.strokeStyle = (this.game_started) ? 'rgba(24, 231, 207, ' + weight + ')' : 'rgba(24, 231, 207, 0.1)';
+                        this.ctx.strokeStyle = (this.game_started) ? 'rgba(24, 231, 207, ' + o  + ')' : 'rgba(24, 231, 207, 0.1)';
                         this.ctx.stroke();
                     }
                 }
